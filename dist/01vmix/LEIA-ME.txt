@@ -1,0 +1,22 @@
+01vmix 3.2 - pacote para Windows
+
+INSTALACAO
+1. Extraia o ZIP inteiro para uma pasta local.
+2. Clique com o botao direito em Instalar.ps1 e escolha Executar com PowerShell.
+   Se a politica do Windows bloquear o script, abra o PowerShell nesta pasta e
+   execute: powershell -NoProfile -ExecutionPolicy Bypass -File .\Instalar.ps1
+3. Abra 01vmix pelo Menu Iniciar.
+
+REQUISITOS
+- Windows 7 ou posterior, Windows de 32 bits ou 64 bits (aplicativo x86).
+- .NET Framework 3.5, que inclui o runtime 2.0 exigido pelo aplicativo.
+  Em algumas instalacoes do Windows 10/11, esse recurso opcional precisa ser ativado.
+- Driver MIDI compativel para comunicacao com o console Yamaha DME.
+
+DESINSTALACAO
+Use Configuracoes > Aplicativos > 01vmix ou execute Desinstalar.ps1.
+As preferencias e os arquivos de usuario em AppData nao sao apagados.
+
+O pacote contem os binarios da aplicacao e as dependencias gerenciadas usadas
+pela build. Consulte LICENSE para os termos do projeto. A comunicacao com
+hardware requer o driver MIDI compativel, distribuido separadamente.
