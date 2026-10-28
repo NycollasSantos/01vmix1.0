@@ -910,7 +910,7 @@ public class frmGraphicEQ : Form
 		base.ClientSize = new System.Drawing.Size(857, 471);
 		base.Controls.Add(this.faderGEQBand);
 		base.Controls.Add(this.faderGEQGain);
-		base.Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+		base.Icon = System.Drawing.Icon.ExtractAssociatedIcon(System.Windows.Forms.Application.ExecutablePath);
 		base.Name = "frmGraphicEQ";
 		base.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
 		this.Text = "GraphicEQ";

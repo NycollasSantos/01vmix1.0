@@ -14,7 +14,7 @@ internal sealed class Settings : ApplicationSettingsBase
 
 	public static Settings Default => defaultInstance;
 
-	[DefaultSettingValue("Coral")]
+	[DefaultSettingValue("26, 188, 156")]
 	[DebuggerNonUserCode]
 	[UserScopedSetting]
 	public Color c_channel_on
@@ -30,7 +30,7 @@ internal sealed class Settings : ApplicationSettingsBase
 	}
 
 	[DebuggerNonUserCode]
-	[DefaultSettingValue("Gray")]
+	[DefaultSettingValue("53, 68, 84")]
 	[UserScopedSetting]
 	public Color c_channel_off
 	{
@@ -44,7 +44,7 @@ internal sealed class Settings : ApplicationSettingsBase
 		}
 	}
 
-	[DefaultSettingValue("Lime")]
+	[DefaultSettingValue("26, 188, 156")]
 	[DebuggerNonUserCode]
 	[UserScopedSetting]
 	public Color c_button_active
@@ -59,7 +59,7 @@ internal sealed class Settings : ApplicationSettingsBase
 		}
 	}
 
-	[DefaultSettingValue("WhiteSmoke")]
+	[DefaultSettingValue("42, 54, 68")]
 	[UserScopedSetting]
 	[DebuggerNonUserCode]
 	public Color c_button_inactive
@@ -106,7 +106,7 @@ internal sealed class Settings : ApplicationSettingsBase
 
 	[UserScopedSetting]
 	[DebuggerNonUserCode]
-	[DefaultSettingValue("50, 50, 50")]
+	[DefaultSettingValue("18, 25, 34")]
 	public Color c_background
 	{
 		get
@@ -134,7 +134,7 @@ internal sealed class Settings : ApplicationSettingsBase
 		}
 	}
 
-	[DefaultSettingValue("Lime")]
+	[DefaultSettingValue("26, 188, 156")]
 	[UserScopedSetting]
 	[DebuggerNonUserCode]
 	public Color EQActive
@@ -465,7 +465,7 @@ internal sealed class Settings : ApplicationSettingsBase
 	}
 
 	[UserScopedSetting]
-	[DefaultSettingValue("Black")]
+	[DefaultSettingValue("WhiteSmoke")]
 	[DebuggerNonUserCode]
 	public Color c_channel_on_fore
 	{
@@ -479,7 +479,7 @@ internal sealed class Settings : ApplicationSettingsBase
 		}
 	}
 
-	[DefaultSettingValue("Black")]
+	[DefaultSettingValue("WhiteSmoke")]
 	[UserScopedSetting]
 	[DebuggerNonUserCode]
 	public Color c_channel_off_fore
@@ -495,7 +495,7 @@ internal sealed class Settings : ApplicationSettingsBase
 	}
 
 	[UserScopedSetting]
-	[DefaultSettingValue("Black")]
+	[DefaultSettingValue("WhiteSmoke")]
 	[DebuggerNonUserCode]
 	public Color c_button_active_fore
 	{
@@ -509,7 +509,7 @@ internal sealed class Settings : ApplicationSettingsBase
 		}
 	}
 
-	[DefaultSettingValue("Black")]
+	[DefaultSettingValue("WhiteSmoke")]
 	[UserScopedSetting]
 	[DebuggerNonUserCode]
 	public Color c_button_inactive_fore
@@ -525,7 +525,7 @@ internal sealed class Settings : ApplicationSettingsBase
 	}
 
 	[UserScopedSetting]
-	[DefaultSettingValue("Lime")]
+	[DefaultSettingValue("83, 224, 192")]
 	[DebuggerNonUserCode]
 	public Color c_led_fore
 	{
@@ -539,7 +539,7 @@ internal sealed class Settings : ApplicationSettingsBase
 		}
 	}
 
-	[DefaultSettingValue("Black")]
+	[DefaultSettingValue("24, 33, 44")]
 	[UserScopedSetting]
 	[DebuggerNonUserCode]
 	public Color c_led_back
@@ -569,7 +569,7 @@ internal sealed class Settings : ApplicationSettingsBase
 		}
 	}
 
-	[DefaultSettingValue("Original")]
+	[DefaultSettingValue("Dark Modern")]
 	[UserScopedSetting]
 	[DebuggerNonUserCode]
 	public string c_theme
@@ -584,7 +584,7 @@ internal sealed class Settings : ApplicationSettingsBase
 		}
 	}
 
-	[DefaultSettingValue("50, 50, 50")]
+	[DefaultSettingValue("31, 42, 56")]
 	[DebuggerNonUserCode]
 	[UserScopedSetting]
 	public Color c_fader_back
@@ -615,7 +615,7 @@ internal sealed class Settings : ApplicationSettingsBase
 	}
 
 	[UserScopedSetting]
-	[DefaultSettingValue("Coral")]
+	[DefaultSettingValue("26, 188, 156")]
 	[DebuggerNonUserCode]
 	public Color c_fader_tail
 	{

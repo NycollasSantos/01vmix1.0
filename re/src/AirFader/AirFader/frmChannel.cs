@@ -8054,7 +8054,7 @@ public class frmChannel : Form
 		base.Controls.Add(this.panelTopMenu);
 		base.Controls.Add(this.tabSection);
 		this.DoubleBuffered = true;
-		base.Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+		base.Icon = System.Drawing.Icon.ExtractAssociatedIcon(System.Windows.Forms.Application.ExecutablePath);
 		base.Name = "frmChannel";
 		base.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
 		this.Text = "Channel Editor";

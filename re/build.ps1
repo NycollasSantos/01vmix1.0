@@ -225,6 +225,9 @@ foreach ($name in @('protobuf-net.dll', 'AirControls.dll',
     }
 }
 
+$brandLogo = Join-Path $SourceDir '01vmix-wordmark.png'
+if (-not (Test-Path -LiteralPath $brandLogo)) { throw "Required logo asset not found: $brandLogo" }
+Copy-Item -LiteralPath $brandLogo -Destination (Join-Path $OutputDir '01vmix-wordmark.png') -Force
 # rebuild the app config from the project copy so the settings section matches
 $cfg = Join-Path $SourceDir 'app.config'
 if (Test-Path -LiteralPath $cfg) {

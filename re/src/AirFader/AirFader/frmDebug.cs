@@ -160,7 +160,7 @@ public class frmDebug : Form
 		base.Controls.Add(this.cbLogLevel);
 		base.Controls.Add(this.cmdOpenFolder);
 		base.Controls.Add(this.cmdOpenLog);
-		base.Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+		base.Icon = System.Drawing.Icon.ExtractAssociatedIcon(System.Windows.Forms.Application.ExecutablePath);
 		base.Name = "frmDebug";
 		this.Text = "Debug Settings";
 		base.Load += new System.EventHandler(frmDebug_Load);

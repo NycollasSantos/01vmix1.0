@@ -807,7 +807,7 @@ public class frmBounce : Form
 		base.Controls.Add(this.lblPlayer1Ch);
 		base.Controls.Add(this.lblHelp);
 		base.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-		base.Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+		base.Icon = System.Drawing.Icon.ExtractAssociatedIcon(System.Windows.Forms.Application.ExecutablePath);
 		base.Name = "frmBounce";
 		this.Text = "Bounce";
 		base.Load += new System.EventHandler(frmPong_Load);

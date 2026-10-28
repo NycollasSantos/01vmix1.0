@@ -244,7 +244,7 @@ public class frmConfirm : Form
 		base.Controls.Add(this.btnYes);
 		base.Controls.Add(this.lblConfirm);
 		base.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-		base.Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+		base.Icon = System.Drawing.Icon.ExtractAssociatedIcon(System.Windows.Forms.Application.ExecutablePath);
 		base.Name = "frmConfirm";
 		base.ShowInTaskbar = false;
 		base.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

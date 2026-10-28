@@ -463,7 +463,7 @@ public class frmScene : Form
 		base.ClientSize = new System.Drawing.Size(696, 455);
 		base.Controls.Add(this.gridScene);
 		this.DoubleBuffered = true;
-		base.Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+		base.Icon = System.Drawing.Icon.ExtractAssociatedIcon(System.Windows.Forms.Application.ExecutablePath);
 		base.Name = "frmScene";
 		base.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
 		this.Text = "Scene List";

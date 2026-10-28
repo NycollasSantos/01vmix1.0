@@ -61,7 +61,7 @@ public class frmFancyBox : Form
 		base.Controls.Add(this.label2);
 		base.Controls.Add(this.btnCancel);
 		base.Controls.Add(this.btnRegister);
-		base.Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+		base.Icon = System.Drawing.Icon.ExtractAssociatedIcon(System.Windows.Forms.Application.ExecutablePath);
 		base.Name = "frmFancyBox";
 		base.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 		this.Text = "Info";

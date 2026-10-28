@@ -243,7 +243,7 @@ public class frmTrial : Form
 		base.Controls.Add(this.txtOwnerName);
 		base.Controls.Add(this.btnRegister);
 		base.Controls.Add(this.txtEmail);
-		base.Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+		base.Icon = System.Drawing.Icon.ExtractAssociatedIcon(System.Windows.Forms.Application.ExecutablePath);
 		base.Name = "frmTrial";
 		base.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 		this.Text = "No License Key";

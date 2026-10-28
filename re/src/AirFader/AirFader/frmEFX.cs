@@ -599,7 +599,7 @@ public class frmEFX : Form
 		base.Controls.Add(this.panelParam2);
 		base.Controls.Add(this.panelParam1);
 		base.Controls.Add(this.panelParam0);
-		base.Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+		base.Icon = System.Drawing.Icon.ExtractAssociatedIcon(System.Windows.Forms.Application.ExecutablePath);
 		base.Name = "frmEFX";
 		base.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
 		this.Text = "Effects";

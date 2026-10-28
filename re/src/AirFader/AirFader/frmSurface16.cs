@@ -470,6 +470,67 @@ public class frmSurface16 : Form
 		control.Invalidate(invalidateChildren: true);
 	}
 
+	private void MigrateDarkModernTheme()
+	{
+		if (Settings.Default.c_theme != "Original")
+		{
+			return;
+		}
+
+		bool oldDefault = Settings.Default.c_button_active == Color.Lime &&
+			Settings.Default.c_button_inactive == Color.WhiteSmoke &&
+			Settings.Default.c_button_active_fore == Color.Black &&
+			Settings.Default.c_button_inactive_fore == Color.Black &&
+			Settings.Default.c_background == Color.FromArgb(50, 50, 50) &&
+			Settings.Default.c_led_back == Color.Black &&
+			Settings.Default.c_led_fore == Color.Lime &&
+			Settings.Default.c_fader_back == Color.FromArgb(50, 50, 50);
+		bool previousChatPalette = Settings.Default.c_button_active == Color.FromArgb(26, 188, 156) &&
+			Settings.Default.c_button_inactive == Color.FromArgb(42, 54, 68) &&
+			Settings.Default.c_button_active_fore == Color.WhiteSmoke &&
+			Settings.Default.c_button_inactive_fore == Color.WhiteSmoke &&
+			Settings.Default.c_background == Color.FromArgb(18, 25, 34) &&
+			Settings.Default.c_led_back == Color.FromArgb(24, 33, 44) &&
+			Settings.Default.c_led_fore == Color.FromArgb(26, 188, 156) &&
+			Settings.Default.c_fader_back == Color.FromArgb(31, 42, 56);
+		if (!oldDefault && !previousChatPalette)
+		{
+			return;
+		}
+
+		Settings.Default.c_theme = "Dark Modern";
+		Settings.Default.c_button_active = Color.FromArgb(26, 188, 156);
+		Settings.Default.c_button_inactive = Color.FromArgb(42, 54, 68);
+		Settings.Default.c_button_active_fore = Color.WhiteSmoke;
+		Settings.Default.c_button_inactive_fore = Color.WhiteSmoke;
+		Settings.Default.c_channel_on = Color.FromArgb(26, 188, 156);
+		Settings.Default.c_channel_off = Color.FromArgb(53, 68, 84);
+		Settings.Default.c_channel_on_fore = Color.WhiteSmoke;
+		Settings.Default.c_channel_off_fore = Color.WhiteSmoke;
+		Settings.Default.c_background = Color.FromArgb(18, 25, 34);
+		Settings.Default.c_foreground = Color.WhiteSmoke;
+		Settings.Default.c_led_back = Color.FromArgb(24, 33, 44);
+		Settings.Default.c_led_fore = Color.FromArgb(83, 224, 192);
+		Settings.Default.c_fader_back = Color.FromArgb(31, 42, 56);
+		Settings.Default.c_fader_fore = Color.WhiteSmoke;
+		Settings.Default.c_fader_tail = Color.FromArgb(26, 188, 156);
+		Settings.Default.EQActive = Color.FromArgb(26, 188, 156);
+		Settings.Default.Save();
+	}
+	private void LoadBrandLogo()
+	{
+		string path = Path.Combine(Application.StartupPath, "01vmix-wordmark.png");
+		if (!File.Exists(path))
+		{
+			return;
+		}
+		using (Bitmap source = new Bitmap(path))
+		{
+			lblBrand.BackgroundImage = new Bitmap(source);
+		}
+		lblBrand.BackgroundImageLayout = ImageLayout.Zoom;
+		lblBrand.Text = string.Empty;
+	}
 	public frmSurface16()
 	{
 		try
@@ -500,6 +561,7 @@ public class frmSurface16 : Form
 				}
 				Settings.Default.Save();
 			}
+			MigrateDarkModernTheme();
 			if (isDebug)
 			{
 				string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
@@ -520,6 +582,7 @@ public class frmSurface16 : Form
 				logDebug("Initializing Components");
 			}
 			InitializeComponent();
+			LoadBrandLogo();
 			MixEngine.setConsoleType(Settings.Default.ConsoleType);
 			MixEngine.hMainWindow = this;
 			if (isDebug)
@@ -5604,7 +5667,7 @@ public class frmSurface16 : Form
 		this.lbLog.Visible = false;
 		this.lbLog.SelectedIndexChanged += new System.EventHandler(lbLog_SelectedIndexChanged);
 		this.lbLog.DoubleClick += new System.EventHandler(lbLog_DoubleClick);
-		this.panelTopR.BackColor = System.Drawing.Color.FromArgb(0, 0, 72);
+		this.panelTopR.BackColor = System.Drawing.Color.FromArgb(28, 39, 52);
 		this.panelTopR.BorderColor = System.Drawing.Color.Black;
 		this.panelTopR.BorderSize = 1f;
 		this.panelTopR.Controls.Add(this.btnConnect);
@@ -5695,7 +5758,7 @@ public class frmSurface16 : Form
 		this.btnFine.Text = "Fine\nMode";
 		this.btnFine.UseVisualStyleBackColor = false;
 		this.btnFine.Click += new System.EventHandler(btnFine_Click);
-		this.panelUDF.BackColor = System.Drawing.Color.FromArgb(0, 0, 64);
+		this.panelUDF.BackColor = System.Drawing.Color.FromArgb(22, 31, 42);
 		this.panelUDF.BorderColor = System.Drawing.Color.Black;
 		this.panelUDF.BorderSize = 1f;
 		this.panelUDF.Controls.Add(this.label3);
@@ -5717,7 +5780,7 @@ public class frmSurface16 : Form
 		this.label3.TabIndex = 115;
 		this.label3.Text = "UDF";
 		this.label3.Visible = false;
-		this.panelSends.BackColor = System.Drawing.Color.FromArgb(64, 0, 64);
+		this.panelSends.BackColor = System.Drawing.Color.FromArgb(24, 33, 44);
 		this.panelSends.BorderColor = System.Drawing.Color.Black;
 		this.panelSends.BorderSize = 1f;
 		this.panelSends.Controls.Add(this.lblParamPage);
@@ -5737,7 +5800,7 @@ public class frmSurface16 : Form
 		this.lblParamPage.Size = new System.Drawing.Size(146, 22);
 		this.lblParamPage.TabIndex = 115;
 		this.lblParamPage.Text = "Sends On Faders";
-		this.panelLayer.BackColor = System.Drawing.Color.FromArgb(0, 0, 72);
+		this.panelLayer.BackColor = System.Drawing.Color.FromArgb(28, 39, 52);
 		this.panelLayer.BorderColor = System.Drawing.Color.Black;
 		this.panelLayer.BorderSize = 1f;
 		this.panelLayer.EQColor = System.Drawing.Color.Lime;
@@ -5747,7 +5810,7 @@ public class frmSurface16 : Form
 		this.panelLayer.PanelType = 0;
 		this.panelLayer.Size = new System.Drawing.Size(172, 152);
 		this.panelLayer.TabIndex = 162;
-		this.panelLCD.BackColor = System.Drawing.Color.FromArgb(0, 0, 72);
+		this.panelLCD.BackColor = System.Drawing.Color.FromArgb(28, 39, 52);
 		this.panelLCD.BorderColor = System.Drawing.Color.Black;
 		this.panelLCD.BorderSize = 2f;
 		this.panelLCD.Controls.Add(this.label5);
@@ -5831,7 +5894,7 @@ public class frmSurface16 : Form
 		this.lblDebug.Visible = false;
 		this.lblDebug.Click += new System.EventHandler(lblDebug_Click);
 		this.lblBrand.AutoSize = false;
-		this.lblBrand.BackColor = System.Drawing.Color.FromArgb(0, 0, 72);
+		this.lblBrand.BackColor = System.Drawing.Color.FromArgb(28, 39, 52);
 		this.lblBrand.Font = new System.Drawing.Font("Arial", 16f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
 		this.lblBrand.ForeColor = System.Drawing.Color.White;
 		this.lblBrand.Location = new System.Drawing.Point(12, 8);
@@ -5842,7 +5905,7 @@ public class frmSurface16 : Form
 		this.lblBrand.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 		this.lblBrand.Click += new System.EventHandler(lblBrand_Click);
 		this.lblBrand.DoubleClick += new System.EventHandler(lblBrand_DoubleClick);
-		this.panelHome.BackColor = System.Drawing.Color.FromArgb(0, 0, 72);
+		this.panelHome.BackColor = System.Drawing.Color.FromArgb(28, 39, 52);
 		this.panelHome.BorderColor = System.Drawing.Color.Black;
 		this.panelHome.BorderSize = 1f;
 		this.panelHome.Controls.Add(this.lblPanelHome);
@@ -5862,7 +5925,7 @@ public class frmSurface16 : Form
 		this.lblPanelHome.TabIndex = 82;
 		this.lblPanelHome.Text = "Mute Groups";
 		this.lblPanelHome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-		this.panelConsole.BackColor = System.Drawing.Color.FromArgb(0, 0, 72);
+		this.panelConsole.BackColor = System.Drawing.Color.FromArgb(28, 39, 52);
 		this.panelConsole.BorderColor = System.Drawing.Color.Black;
 		this.panelConsole.BorderSize = 1f;
 		this.panelConsole.EQColor = System.Drawing.Color.Lime;
@@ -5890,7 +5953,7 @@ public class frmSurface16 : Form
 		base.Controls.Add(this.panelHome);
 		base.Controls.Add(this.panelConsole);
 		this.DoubleBuffered = true;
-		base.Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+		base.Icon = System.Drawing.Icon.ExtractAssociatedIcon(System.Windows.Forms.Application.ExecutablePath);
 		base.KeyPreview = true;
 		base.Name = "frmSurface16";
 		base.StartPosition = System.Windows.Forms.FormStartPosition.Manual;

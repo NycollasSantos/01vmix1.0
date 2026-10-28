@@ -650,7 +650,7 @@ public class frmConfig : Form
 					lbControls.Items.Add(item4);
 				}
 			}
-			string[] array = new string[8] { "Custom", "Original", "Contrast", "Fire", "Ice", "Yamawho", "SemiSonus", "Mackish" };
+			string[] array = new string[9] { "Custom", "Original", "Dark Modern", "Contrast", "Fire", "Ice", "Yamawho", "SemiSonus", "Mackish" };
 			cbTheme.Items.Clear();
 			string[] array2 = array;
 			foreach (string item in array2)
@@ -1306,6 +1306,23 @@ public class frmConfig : Form
 				btnFaderBack.BackColor = Color.FromArgb(50, 50, 50);
 				btnFaderFore.BackColor = Color.WhiteSmoke;
 				btnFaderTail.BackColor = Color.Coral;
+				break;
+				case "Dark Modern":
+				btnActiveBack.BackColor = Color.FromArgb(26, 188, 156);
+				btnActiveFore.BackColor = Color.WhiteSmoke;
+				btnInactiveBack.BackColor = Color.FromArgb(42, 54, 68);
+				btnInactiveFore.BackColor = Color.WhiteSmoke;
+				btnChOffBack.BackColor = Color.FromArgb(53, 68, 84);
+				btnChOffFore.BackColor = Color.WhiteSmoke;
+				btnChOnBack.BackColor = Color.FromArgb(26, 188, 156);
+				btnChOnFore.BackColor = Color.WhiteSmoke;
+				btnForeground.BackColor = Color.WhiteSmoke;
+				btnBackground.BackColor = Color.FromArgb(18, 25, 34);
+				btnLEDColorBack.BackColor = Color.FromArgb(24, 33, 44);
+				btnLEDColorFore.BackColor = Color.FromArgb(83, 224, 192);
+				btnFaderBack.BackColor = Color.FromArgb(31, 42, 56);
+				btnFaderFore.BackColor = Color.WhiteSmoke;
+				btnFaderTail.BackColor = Color.FromArgb(26, 188, 156);
 				break;
 			case "Contrast":
 				btnActiveBack.BackColor = Color.Yellow;
@@ -4083,7 +4100,7 @@ public class frmConfig : Form
 		base.Controls.Add(this.txtQ);
 		base.Controls.Add(this.txtFreq);
 		base.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-		base.Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+		base.Icon = System.Drawing.Icon.ExtractAssociatedIcon(System.Windows.Forms.Application.ExecutablePath);
 		base.Name = "frmConfig";
 		base.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 		this.Text = "Configuration";
